@@ -31,6 +31,10 @@ Week-12 Challenge
 
 ## Description
 
+AS A business owner
+I WANT to be able to view and manage the departments, roles, and employees in my company
+SO THAT I can organize and plan my business
+
 This application allows users to create a simple logo for their clients and projects so that they can skip paying a graphic designer. The app uses inquirer to prompt the user in the CLI questions about how they want their logo to look (shape, shape color, text, text color). The user can input color name or the hexadecimal representation of the color for the shape color and text color. The text can only display 3 characters or less. Once the user has answered all prompts, then an SVG file is written using their answers to create a logo. This application also uses Jest to test the code to make sure it will render the shapes asked for. This application has possibilities for future additions like more polygon options, font options, text shapes, and color gradients or patterns.
 
 ## Live Screen Recording of Application Functionality
