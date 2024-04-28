@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/chelleyoungw/employee-tracker/issues"
   },
-  "homepage": "https://github.com/chelleyoungw/employee-tracker#readme"
+  "homepage": "https://github.com/chelleyoungw/employee-tracker#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "mysql2": "^3.9.7",
+    "sequelize": "^6.37.3"
+  }
 }
