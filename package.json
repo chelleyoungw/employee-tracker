@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/chelleyoungw/employee-tracker#readme",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "inquirer": "^8.2.4",
     "mysql2": "^3.9.7",
     "sequelize": "^6.37.3"
