@@ -1,5 +1,5 @@
 // Importing Department, Role, & Employee models from the models folder -> blueprint of our tables
-const { Department, Role, Employee } = require("./Models");
+const { Department, Role, Employee } = require("./models");
 
 // Importing sequelize which is our telephone to the database it allows javascript to talk with mysql
 const sequelize = require("./connection");
