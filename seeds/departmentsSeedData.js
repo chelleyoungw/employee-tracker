@@ -1,0 +1,17 @@
+[
+  {
+    name: "Reception",
+  },
+  {
+    name: "Management",
+  },
+  {
+    name: "Pharmacy",
+  },
+  {
+    name: "Kennel",
+  },
+  {
+    name: "Nurses",
+  }
+];
