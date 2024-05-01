@@ -1,16 +1,28 @@
 // Seeds department table with json data
 
 const sequelize = require("../connection");
-const Department = require("./models/department");
+const Department = require("../models/department");
 
-const departmentsSeedData = require("./departmentsSeedData.json");
+const departmentsSeedData = require("./departmentsSeedData");
 
 const seedDepartmentData = async () => {
-  await sequelize.sync({ force: true });
+  try {
+    // Sync the database
+    await sequelize.sync({ force: true });
 
-  const departments = await Department.bulkCreate(departmentsSeedData);
+    // Seed the department data
+    const departments = await Department.bulkCreate(departmentsSeedData);
 
-  process.exit(0);
+    console.log('Department data seeded successfully.');
+  } catch (error) {
+    console.error('Error seeding department data:', error);
+  } finally {
+    // Close the database connection
+    await sequelize.close();
+
+    // Exit the process
+    process.exit(0);
+  }
 };
 
 seedDepartmentData();

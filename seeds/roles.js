@@ -14,7 +14,7 @@ const seedRoleData = async () => {
     const roles = await Role.bulkCreate(rolesSeedData);
 
     console.log('Role data seeded successfully.');
-  } catch (err) {
+  } catch (error) {
     console.error('Error seeding role data:', error);
   } finally {
     // Close the database connection
