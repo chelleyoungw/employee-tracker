@@ -3,14 +3,26 @@
 const sequelize = require("../connection");
 const Role = require("./models/role");
 
-const rolesSeedData = require("./rolesSeedData.json");
+const rolesSeedData = require("./rolesSeedData");
 
 const seedRoleData = async () => {
-  await sequelize.sync({ force: true });
+  try {
+    // Sync the database
+    await sequelize.sync({ force: true });
 
-  const roles = await Role.bulkCreate(rolesSeedData);
+    // Seed the role data
+    const roles = await Role.bulkCreate(rolesSeedData);
 
-  process.exit(0);
+    console.log('Role data seeded successfully.');
+  } catch (err) {
+    console.error('Error seeding role data:', error);
+  } finally {
+    // Close the database connection
+    await sequelize.close();
+
+    // Exit the process
+    process.exit(0);
+  }  
 };
 
 seedRoleData();
