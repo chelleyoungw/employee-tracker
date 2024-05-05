@@ -4,7 +4,8 @@
   "description": "This is a content management systems (CMS) to easily view and interact with information stored in a database. This database is a company's employee database using CLI, Node.js, Inquirer, and MySQL.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
