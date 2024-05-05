@@ -26,6 +26,7 @@ function options() {
           "Add Department",
           "Add Role",
           "Add Employee",
+          "Update Employee Manager",
           "Update Employee Role",
           //   `(Move up and down to reveal more choices)`,
         ],
@@ -46,6 +47,8 @@ function options() {
         addRole();
       } else if (answer.employeeTracker === "Add Employee") {
         addEmployee();
+      } else if (answer.employeeTracker === "Update Employee Manager") {
+        updateEmployeeManager();
       } else {
         updateEmployeeRole();
       }
@@ -308,3 +311,65 @@ const updateEmployeeRole = async () => {
       });
     });
 };
+
+// Update employee manager
+const updateEmployeeManager = async () => {
+  let employees = await Employee.findAll({
+    attributes: [
+      ["id", "value"],
+      ["first_name", "name"],
+      ["last_name", "lastName"],
+    ],
+  });
+  // Restructures raw data
+  employees = employees.map((employee) => {
+    employee.get({ plain: true });
+    const employeeInfo = employee.get();
+    return {
+      name: `${employeeInfo.name} ${employeeInfo.lastName}`,
+      value: employeeInfo.value,
+    };
+  });
+  
+  let managers = await Employee.findAll({
+    attributes: [
+      ["id", "value"],
+      ["first_name", "name"],
+      ["last_name", "lastName"],
+    ],
+  });
+  // Restructures raw data
+  managers = managers.map((manager) => manager.get({ plain: true}));
+
+  // Prompts user to select manager who will be updated, and new
+  // manager added to selected employee.
+  inquirer
+   .prompt([
+      {
+        type: "list",
+        message: "Who is the employee whose manager you would like to update?",
+        name: "id",
+        choices: employees,
+      },
+      {
+        type: "list",
+        message:
+          "What is the name of the updated manager would you like to assign to this employee?",
+        name: "manager_id",
+        choices: managers,
+      },
+    ])
+    // Takes in user inputs and adds answers to database
+   .then((answer) => {
+      // Gives point of reference within database to where data should be updated
+      Employee.update(answer, {
+        where: {
+          id: answer.id,
+        },
+      }).then((data) => {
+        // Fires off prompts after updating database
+        options();
+      });
+    });
+
+}
