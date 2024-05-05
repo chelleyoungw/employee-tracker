@@ -37,7 +37,8 @@ Future development for this application along with the addition of unit testing 
 
 ## Live Screen Recording of Application Functionality
 
----attachvideo---
+[05.05.2024 18_19.webm](https://github.com/chelleyoungw/employee-tracker/assets/153236313/3b695f38-2dbe-4b22-b4e3-54684821c742)
+
 
 ## Screenshots
 
