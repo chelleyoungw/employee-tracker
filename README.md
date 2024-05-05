@@ -31,11 +31,9 @@ Week-12 Challenge
 
 ## Description
 
-AS A business owner
-I WANT to be able to view and manage the departments, roles, and employees in my company
-SO THAT I can organize and plan my business
+This application can be utilized by the user to view and manage the departments, roles, and employees within their company and help streamline salaries, planning and organization. The database was created with MySQL. It implements the sequelize dependency allowing for the database to be interacted with through the use of JavaScript. 
 
-This application allows users to create a simple logo for their clients and projects so that they can skip paying a graphic designer. The app uses inquirer to prompt the user in the CLI questions about how they want their logo to look (shape, shape color, text, text color). The user can input color name or the hexadecimal representation of the color for the shape color and text color. The text can only display 3 characters or less. Once the user has answered all prompts, then an SVG file is written using their answers to create a logo. This application also uses Jest to test the code to make sure it will render the shapes asked for. This application has possibilities for future additions like more polygon options, font options, text shapes, and color gradients or patterns.
+Future development for this application along with the addition of unit testing would consist of creating functionality allowing the user to view employees by manager, view employees by department, being able to delete departments, roles, and employees from the database, and allowing the view of the total utilized budget of a department—in other words, the combined salaries of all employees in that department.
 
 ## Live Screen Recording of Application Functionality
 
@@ -51,42 +49,74 @@ Examples of Generated Logos
 
 ![Logo-example-triangle](./examples/logo.svg)
 
-![Logo-example-square](./examples/logo-2.svg)
-
-![Logo-example-circle](./examples/logo-3.svg)
-
 ## Technologies Used
 
-This project is powered by Node.js v20.11.1, utilizes Inquirer v8.2.6 (node package manager), and file system module (node package manager). It also employs jest v29.7.0 (node package manager) for the unit testing conducted in this application. 
+**Runtime:** Node.js v20.11.1
+
+**Language:** JavaScript
+
+**Dependencies:**
+
+- Dotenv v16.4.5
+- Inquirer v8.2.4
+- MySQL2 v3.9.7
+- Sequelize v6.37.3
 
 ## Installation
 
 1. Clone the repo:
-   git clone https://github.com/chelleyoungw/svg-logo-maker.git
+   git clone https://github.com/chelleyoungw/employee-tracker.git
 
 2. Open in VS Code. If you do not have VS code you must install it.
 
-3. Using the terminal, install node.js v20.11.1.
+3. Using the terminal, install the following version of node.js.
+```
+npm install -g node@20.11.1
+```
+4. Once node.js v16 is installed, in the terminal, utilize the following command to initialize and create a package.json where project files will be stored.
+```
+   npm init -y 
+```
 
-4. Once node.js v16 is installed, in the terminal, utilize the command npm init -y to initialize and create a package.json where project files will be stored.
-
-5. Next, use the terminal to run the command npm i to install the dependencies associated with this application (developers may need to install inquirer and jest directly from the command line, to do so the command for inquirer will be npm i inquirer@8.2.6 to install v8.2.6 of the inquirer, and npm i jest to install the latest version of jest).
-
-6. To run the application, within the terminal, type the command node index.js.
+5. Next, use the terminal to run the following command to install the dependencies associated with this application.
+```
+   npm i
+```
+6. The package.json file should have the following scripts:
+```
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  }
+```
+6. Once the dependencies are installed, you will create the database. Navigate to the directory db that contains the schema.sql file. Once there, open a MySQL shell to run the following command.
+```
+SOURCE schema.sql;
+```
+7. Now that the database is created, you will need to seed the database. This will also create the model structure for the tables inside the database. Navigate to the root directory and open a terminal. Run the following commands to seed the database.
+```
+   node./seeds/departments
+   node./seeds/roes
+   node./seeds/employees
+   ```
+8. Now that the database is seeded, to run the application, navigate to the root directory index.js. Open a terminal and invoke the application with the following command.
+```
+   npm start
+```
 
 ## Authors and Acknowledgements
 
-Chelle Wood is the author. Worked with ChatGPT breaking down code, and consulted https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial for assistance with SVG. Referenced https://github.com/rmessett15/SVG-Logo-Maker.git for assistance with code.
+- Chelle Wood is the author.
+- Occasionally used edX bootcamp Xpert Learning Assistant and ChatGPT. 
+- Referenced github account https://github.com/rmessett15/SQL-Employee-Tracker.git
 
 ## Features
 
-Features of this application include the users ability to generate logos quickly and easily through the use of SVG files, entirely from the command line. No UI (user interface) needed, and no front end tools needed.  
+Features of this application include the users ability to see, manage the departments, roles, and employees from within a CLI. It uses sequelize to interact with the database through JavaScript giving the user a dymanic experience.
 
 ## Usage Information
 
-To run this application, use the command line to navigate to the directory of the application, install all dependencies (npm i), then type the command node index.js. You will then be taken through a series of questions. Once all questions have been answered properly, a message will display to the command line telling you your logo has been generated. Find your new logo in the newly generated SVG file.
-
-For unit testing instructions, navigate to the Test Instructions section.
+Once the application is started, it is very intuitive for the user. All they need to do is arrow up and down through the database options on what actions they want to take and hit enter. The user then needs to follow the commands to adjust or view or edit the database.
 
 ## Contributing
 
@@ -94,9 +124,7 @@ Open to collaboration, if you choose to do so open an issue and modify any chang
 
 ## Test Instructions
 
-To run unit testing, open the terminal, and use the command npm run test.
-
-There is one test suite with three tests. The test suite is checking for a render() method to return a string for the corresponding SVG file with the given shape color (triangle, square, or circle).
+Currently no unit testing written yet for this application.
 
 ## License
 
