@@ -3,26 +3,14 @@
 const sequelize = require("../connection");
 const Employee = require("../models/employee");
 
-const employeesSeedData = require("./employeesSeedData");
+const employeesSeedData = require("./employeesSeedData.json");
 
 const seedEmployeeData = async () => {
-  try {
-    // Sync the database
-    await sequelize.sync({ force: true });
+  await sequelize.sync({ force: true } );
 
-    // Seed the employee data
-    const employees = await Employee.bulkCreate(employeesSeedData);
+  const employees = await Employee.bulkCreate(employeesSeedData);
 
-    console.log('Employee data seeded successfully.');
-  } catch (err) {
-    console.error('Error seeding employee data:', error);
-  } finally {
-    // Close the database connection
-    await sequelize.close();
-
-    // Exit the process
-    process.exit(0);
-  }
+  process.exit(0);
 };
   
 seedEmployeeData();
