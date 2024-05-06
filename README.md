@@ -9,8 +9,6 @@ Week-12 Challenge
 
  * [Live Screen Recording of Application Functionality](#live-screen-recording-of-application-functionality)
 
- * [Screenshots](#screenshots)
-
  * [Technologies Used](#technologies-used)
 
  * [Installation](#installation)
@@ -39,12 +37,15 @@ Future development for this application along with the addition of unit testing 
 
 [05.05.2024 18_19.webm](https://github.com/chelleyoungw/employee-tracker/assets/153236313/3b695f38-2dbe-4b22-b4e3-54684821c742)
 
+<<<<<<< HEAD
 
 ## Screenshots
 
 ![Screenshot1-week-12-challenge](./assets/images/application-screenshot-database.png)
 ![Screenshot2-week-12-challenge](./assets/images/application-screenshot-start.png)
 
+=======
+>>>>>>> ff7566807b47c24eecd084be57000833adb1fc5b
 ## Technologies Used
 
 **Runtime:** Node.js v20.11.1
