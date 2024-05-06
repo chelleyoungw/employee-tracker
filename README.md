@@ -42,13 +42,8 @@ Future development for this application along with the addition of unit testing 
 
 ## Screenshots
 
-Logo Generation
-
-![Screenshot1-week-10-challenge](./assets/images/CLI-text-prompt-screenshot.png)
-
-Examples of Generated Logos
-
-![Logo-example-triangle](./examples/logo.svg)
+![Screenshot1-week-12-challenge](./assets/images/application-screenshot-database.png)
+![Screenshot2-week-12-challenge](./assets/images/application-screenshot-start.png)
 
 ## Technologies Used
 
