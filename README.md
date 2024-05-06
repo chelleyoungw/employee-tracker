@@ -9,8 +9,6 @@ Week-12 Challenge
 
  * [Live Screen Recording of Application Functionality](#live-screen-recording-of-application-functionality)
 
- * [Screenshots](#screenshots)
-
  * [Technologies Used](#technologies-used)
 
  * [Installation](#installation)
@@ -38,17 +36,6 @@ Future development for this application along with the addition of unit testing 
 ## Live Screen Recording of Application Functionality
 
 [05.05.2024 18_19.webm](https://github.com/chelleyoungw/employee-tracker/assets/153236313/3b695f38-2dbe-4b22-b4e3-54684821c742)
-
-
-## Screenshots
-
-Logo Generation
-
-![Screenshot1-week-10-challenge](./assets/images/CLI-text-prompt-screenshot.png)
-
-Examples of Generated Logos
-
-![Logo-example-triangle](./examples/logo.svg)
 
 ## Technologies Used
 
